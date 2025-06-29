@@ -1,0 +1,62 @@
+/* Glass Effect Components */
+.glass-card {
+  background: hsla(0, 0%, 100%, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: hsla(0, 0%, 100%, 0.08);
+  border-color: hsla(0, 0%, 100%, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.3);
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+}
+
+/* Particle Background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Responsive Glass Effects */
+@media (max-width: 768px) {
+  .glass-card {
+    backdrop-filter: blur(5px);
+  }
+  
+  .card-3d:hover {
+    transform: none;
+  }
+  
+  .glass-card:hover {
+    transform: none;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .glass-card,
+  .card-3d {
+    transition: none;
+  }
+  
+  .glass-card:hover,
+  .card-3d:hover {
+    transform: none;
+  }
+}

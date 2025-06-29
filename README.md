@@ -1,36 +1,184 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Ankleshwar Portfolio - Next.js
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS featuring smooth animations and interactive elements.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Modern Design**: Clean, professional layout with dark theme
+- **Responsive**: Fully responsive across all devices
+- **Smooth Animations**: Framer Motion animations and transitions
+- **Interactive Elements**: Particle background effects and hover animations
+- **Fast Performance**: Built with Next.js 15 and optimized for speed
+- **TypeScript**: Fully typed for better development experience
+- **SEO Optimized**: Meta tags and structured data for better search visibility
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## 🏗️ Project Structure
+
+```plaintext
+ankleshwar_portfolio/
+├── src/
+│   ├── app/
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── components/
+│   │   ├── about-section.tsx
+│   │   ├── contact-section.tsx
+│   │   ├── experience-section.tsx
+│   │   ├── hero-section.tsx
+│   │   ├── navigation.tsx
+│   │   ├── particles-background.tsx
+│   │   ├── project-section.tsx
+│   │   └── skill-section.tsx
+│   ├── lib/
+│   │   └── particles-config.ts
+│   └── pages/
+│       └── portfolio.tsx
+├── assets/
+│   ├── dp.jpg
+│   ├── Aura.png
+│   ├── caripharma.png
+│   └── Invisibly.png
+└── public/
+    └── [static files]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+
+- npm, yarn, or pnpm
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/ankleshwardwivedi/ankleshwar_portfolio.git
+   cd ankleshwar_portfolio
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**
 
-## Deploy on Vercel
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Run the development server**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📱 Sections
+
+- **Hero**: Introduction with animated text and call-to-action
+- **About**: Personal information and professional summary
+- **Skills**: Technical skills with animated progress bars
+- **Experience**: Work history and achievements
+- **Projects**: Showcase of recent work with live demos
+- **Contact**: Contact form and social links
+
+## 🎨 Customization
+
+### Updating Personal Information
+
+Edit the component files in `src/components/` to update:
+
+- Personal details in `hero-section.tsx`
+- About information in `about-section.tsx`
+- Skills in `skill-section.tsx`
+- Experience in `experience-section.tsx`
+- Projects in `project-section.tsx`
+- Contact info in `contact-section.tsx`
+
+### Styling
+
+- Global styles: `src/app/globals.css`
+- Tailwind config: `tailwind.config.ts`
+- Component-specific styles: Within each component file
+
+### Animations
+
+- Particle effects: `src/components/particles-background.tsx`
+- Animation configs: `src/lib/particles-config.ts`
+- Framer Motion animations: Throughout component files
+
+## 📦 Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+```
+
+## 🚀 Deployment
+
+### Deploy on Vercel (Recommended)
+
+1. **Connect your repository** to [Vercel](https://vercel.com)
+2. **Configure build settings**:
+   - Framework Preset: Next.js
+   - Build Command: `npm run build`
+   - Output Directory: `.next`
+3. **Deploy** automatically on every push
+
+### Other Deployment Options
+
+- **Netlify**: Connect repository and deploy
+- **GitHub Pages**: Use `gh-pages` for static export
+- **Docker**: Use the included Dockerfile
+
+## 🔧 Environment Variables
+
+Create a `.env.local` file for environment-specific configurations:
+
+```env
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_CONTACT_EMAIL=your-email@example.com
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) for the amazing framework
+- [Tailwind CSS](https://tailwindcss.com/) for utility-first styling
+- [Framer Motion](https://www.framer.com/motion/) for smooth animations
+- [Lucide](https://lucide.dev/) for beautiful icons
+
+---
+
+⭐ Star this repository if you found it helpful!

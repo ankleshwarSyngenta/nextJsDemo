@@ -1,0 +1,216 @@
+/* Portfolio Page Styles */
+
+/* Skip Link for Accessibility */
+.skipLink {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #0ea5e9;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.skipLink:focus {
+  top: 6px;
+}
+
+/* Main container styles */
+.mainContainer {
+  position: relative;
+  min-height: 100vh;
+  background-color: #0a0a0a;
+  color: #ededed;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Main content wrapper */
+.mainContent {
+  position: relative;
+  z-index: 10;
+}
+
+/* Section spacing utility */
+.sectionSpacing {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.sectionContent {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.sectionWrapper {
+  margin-bottom: 6rem;
+}
+
+/* Loading states for lazy components */
+.loadingCard {
+  height: 24rem;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Footer styles */
+.footer {
+  position: relative;
+  z-index: 10;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  margin-top: 5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+}
+
+.footerContainer {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.footerContent {
+  text-align: center;
+}
+
+.footerBrand {
+  margin-bottom: 1rem;
+}
+
+.footerTitle {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0ea5e9;
+  margin-bottom: 1rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.footerTitleDot {
+  color: #f97316;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #0ea5e9;
+  }
+  to {
+    text-shadow: 0 0 30px #0ea5e9, 0 0 40px #0ea5e9;
+  }
+}
+
+.footerDescription {
+  color: #a1a1aa;
+  font-size: 1.125rem;
+  max-width: 32rem;
+  margin: 0 auto 2rem auto;
+  line-height: 1.7;
+}
+
+/* Footer Navigation */
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footerNavLink {
+  color: #ededed;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  position: relative;
+}
+
+.footerNavLink:hover {
+  color: #0ea5e9;
+  transform: scale(1.05);
+}
+
+.footerNavLink:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.5);
+}
+
+/* Footer Copyright */
+.footerCopyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  margin-top: 2rem;
+}
+
+.footerCopyrightText {
+  color: #a1a1aa;
+  font-size: 0.875rem;
+}
+
+/* Keyboard navigation styles */
+.keyboardNavigation .footerNavLink:focus {
+  box-shadow: 0 0 0 2px #0ea5e9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footerTitle {
+    font-size: 1.875rem;
+  }
+  
+  .footerDescription {
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .footerNav {
+    gap: 1rem;
+  }
+  
+  .sectionSpacing {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .sectionWrapper {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerNav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .footerTitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Dark theme variables - applied to body when component mounts */
+.darkTheme {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}

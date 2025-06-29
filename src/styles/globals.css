@@ -1,0 +1,372 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+  
+  /* Custom colors for portfolio */
+  --deep-black: hsl(0, 0%, 4%);
+  --charcoal: hsl(0, 0%, 10%);
+  --cyan-accent: hsl(194, 100%, 50%);
+  --neon-orange: hsl(14, 100%, 60%);
+  --mint-green: hsl(150, 100%, 50%);
+  --glass-bg: hsla(0, 0%, 100%, 0.1);
+  --glass-border: hsla(0, 0%, 100%, 0.2);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: hsl(var(--deep-black));
+    color: hsl(0, 0%, 98%);
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Section Spacing Utility */
+.section-spacing {
+  scroll-margin-top: 6rem; /* Offset for fixed navigation */
+  margin-bottom: 4rem; /* Additional bottom margin for better separation */
+}
+
+/* First section (home) shouldn't have top margin */
+.section-spacing:first-child {
+  margin-top: 0;
+}
+
+/* Additional spacing utilities */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent
+  );
+  margin: 6rem 0;
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--accent);
+  color: var(--background);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Custom Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced hover effects */
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Utility classes, animations, and responsive design features */
+@layer utilities {
+  .glass-card {
+    background: hsla(0, 0%, 100%, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--deep-black)) 0%, hsl(var(--charcoal)) 50%, hsl(var(--deep-black)) 100%);
+  }
+  
+  .text-cyan-accent {
+    color: hsl(var(--cyan-accent));
+  }
+  
+  .text-neon-orange {
+    color: hsl(var(--neon-orange));
+  }
+  
+  .text-mint-green {
+    color: hsl(var(--mint-green));
+  }
+  
+  .bg-cyan-accent {
+    background-color: hsl(var(--cyan-accent));
+  }
+  
+  .bg-neon-orange {
+    background-color: hsl(var(--neon-orange));
+  }
+  
+  .bg-mint-green {
+    background-color: hsl(var(--mint-green));
+  }
+  
+  .bg-deep-black {
+    background-color: hsl(var(--deep-black));
+  }
+  
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
+  }
+  
+  .border-cyan-accent {
+    border-color: hsl(var(--cyan-accent));
+  }
+  
+  .border-neon-orange {
+    border-color: hsl(var(--neon-orange));
+  }
+  
+  .border-mint-green {
+    border-color: hsl(var(--mint-green));
+  }
+  
+  .typewriter {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--cyan-accent));
+    white-space: nowrap;
+  }
+  
+  .skill-bar {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsla(194, 100%, 50%, 0.4), transparent);
+    transition: left 2s ease;
+  }
+  
+  .skill-bar:hover::before {
+    left: 100%;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 20px hsl(var(--cyan-accent)), 0 0 30px hsl(var(--cyan-accent)), 0 0 40px hsl(var(--cyan-accent)); }
+  to { text-shadow: 0 0 10px hsl(var(--cyan-accent)), 0 0 20px hsl(var(--cyan-accent)), 0 0 30px hsl(var(--cyan-accent)); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsla(194, 100%, 50%, 0.5); }
+  50% { box-shadow: 0 0 40px hsla(194, 100%, 50%, 0.8); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.animate-typewriter {
+  animation: typewriter 4s steps(40) infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Section Spacing Utility */
+.section-spacing {
+  scroll-margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  .section-spacing {
+    scroll-margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(5px);
+  }
+  
+  .card-3d:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter {
+    font-size: 0.9rem;
+  }
+  
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .text-muted-foreground {
+    color: var(--foreground) !important;
+  }
+}
+
+/* Performance optimizations */
+.section-spacing {
+  contain: layout style paint;
+  will-change: scroll-position;
+}
+
+/* Loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.animate-pulse {
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.03) 25%, 
+    rgba(255, 255, 255, 0.08) 50%, 
+    rgba(255, 255, 255, 0.03) 75%
+  );
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}

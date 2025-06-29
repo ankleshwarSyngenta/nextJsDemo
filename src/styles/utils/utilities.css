@@ -1,0 +1,75 @@
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--deep-black)) 0%, hsl(var(--charcoal)) 50%, hsl(var(--deep-black)) 100%);
+  }
+  
+  .text-cyan-accent {
+    color: hsl(var(--cyan-accent));
+  }
+  
+  .text-neon-orange {
+    color: hsl(var(--neon-orange));
+  }
+  
+  .text-mint-green {
+    color: hsl(var(--mint-green));
+  }
+  
+  .bg-cyan-accent {
+    background-color: hsl(var(--cyan-accent));
+  }
+  
+  .bg-neon-orange {
+    background-color: hsl(var(--neon-orange));
+  }
+  
+  .bg-mint-green {
+    background-color: hsl(var(--mint-green));
+  }
+  
+  .bg-deep-black {
+    background-color: hsl(var(--deep-black));
+  }
+  
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
+  }
+  
+  .border-cyan-accent {
+    border-color: hsl(var(--cyan-accent));
+  }
+  
+  .border-neon-orange {
+    border-color: hsl(var(--neon-orange));
+  }
+  
+  .border-mint-green {
+    border-color: hsl(var(--mint-green));
+  }
+  
+  .typewriter {
+    overflow: hidden;
+    border-right: 3px solid hsl(var(--cyan-accent));
+    white-space: nowrap;
+  }
+  
+  .skill-bar {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, hsla(194, 100%, 50%, 0.4), transparent);
+    transition: left 2s ease;
+  }
+  
+  .skill-bar:hover::before {
+    left: 100%;
+  }
+}
