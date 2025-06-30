@@ -53,6 +53,7 @@ const config: Config = {
         "darker-black": "#000000",
         "cyan-accent": "#00e1ff",
         "neon-orange": "#ff6b35",
+        "mint-green": "#00ff88",
         "glass-bg": "rgba(255, 255, 255, 0.05)",
         "glass-border": "rgba(255, 255, 255, 0.1)",
         chart: {

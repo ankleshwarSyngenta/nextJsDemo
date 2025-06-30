@@ -1,5 +1,6 @@
 import { ExternalLink, Github, Gift, Building, Newspaper, Heart } from "lucide-react";
 import Image from "next/image";
+import "./projects.css";
 
 interface ProjectCardProps {
   title: string;
@@ -14,62 +15,62 @@ interface ProjectCardProps {
 
 function ProjectCard({ title, description, image, technologies, icon, titleColor, demoLink, codeLink }: ProjectCardProps) {
   return (
-    <div className="glass-card p-8 rounded-2xl card-3d group animate-slideInLeft">
-      <div className="mb-6">
-        <Image src={image} alt={`${title} Interface`} width={400} height={192} className="w-full h-48 object-cover rounded-lg" />
+    <div className="project-card glass-card hover-lift animate-fadeInUp">
+      <div className="project-image-container">
+        <Image 
+          src={image} 
+          alt={`${title} Interface`} 
+          width={400} 
+          height={192} 
+          className="project-image" 
+        />
+        <div className="project-overlay">
+          <div className="project-icon">
+            {icon}
+          </div>
+        </div>
       </div>
       
-      <h3 className={`text-2xl font-bold mb-4 ${titleColor} flex items-center`}>
-        {icon}
-        {title}
-      </h3>
-      <p className="text-gray-300 mb-6">
-        {description}
-      </p>
-      
-      <div className="flex flex-wrap gap-2 mb-6">
-        {technologies.map((tech, index) => (
-          <span 
-            key={index} 
-            className={`px-3 py-1 rounded-full text-sm font-medium ${
-              index % 4 === 0 ? 'bg-cyan-accent text-black' :
-              index % 4 === 1 ? 'bg-neon-orange text-black' :
-              index % 4 === 2 ? 'bg-mint-green text-black' :
-              'bg-purple-500 text-white'
-            }`}
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-      
-      <div className="flex space-x-4">
-        {demoLink && (
-          <a 
-            href={demoLink} 
-            className={`flex-1 py-2 px-4 rounded-lg text-center font-semibold transition-colors duration-300 ${
-              titleColor.includes('cyan') ? 'bg-cyan-accent text-black hover:bg-cyan-300' :
-              titleColor.includes('orange') ? 'bg-neon-orange text-black hover:bg-orange-400' :
-              'bg-mint-green text-black hover:bg-green-400'
-            } flex items-center justify-center`}
-          >
-            <ExternalLink className="mr-2" size={16} />
-            View Project
-          </a>
-        )}
-        {codeLink && (
-          <a 
-            href={codeLink} 
-            className={`flex-1 py-2 px-4 rounded-lg text-center font-semibold transition-all duration-300 border ${
-              titleColor.includes('cyan') ? 'border-cyan-accent hover:bg-cyan-accent' :
-              titleColor.includes('orange') ? 'border-neon-orange hover:bg-neon-orange' :
-              'border-mint-green hover:bg-mint-green'
-            } hover:text-black flex items-center justify-center`}
-          >
-            <Github className="mr-2" size={16} />
-            Source Code
-          </a>
-        )}
+      <div className="project-content">
+        <h3 className={`project-title ${titleColor}`}>
+          {title}
+        </h3>
+        <p className="project-description">
+          {description}
+        </p>
+        
+        <div className="project-tech">
+          {technologies.map((tech, index) => (
+            <span key={index} className="tech-tag">
+              {tech}
+            </span>
+          ))}
+        </div>
+        
+        <div className="project-links">
+          {demoLink && (
+            <a 
+              href={demoLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="project-link demo-link"
+            >
+              <ExternalLink size={16} />
+              Demo
+            </a>
+          )}
+          {codeLink && (
+            <a 
+              href={codeLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="project-link code-link"
+            >
+              <Github size={16} />
+              Code
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

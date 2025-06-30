@@ -21,7 +21,7 @@ const ExperienceSection = dynamic(() => import("../components/experience/experie
 const ContactSection = dynamic(() => import("../components/contact/contact-section"), {
   loading: () => <div className={styles.loadingCard} />,
 });
-const ParticlesBackground = dynamic(() => import("../components/particles/particles-background"), {
+const ParticlesBackground = dynamic(() => import("../components/particles/particles-background-new"), {
   ssr: false,
   loading: () => null,
 });

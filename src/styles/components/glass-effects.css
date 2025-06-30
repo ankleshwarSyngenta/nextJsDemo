@@ -1,26 +1,61 @@
-/* Glass Effect Components */
+/* Enhanced Glass Effect Components */
 .glass-card {
-  background: hsla(0, 0%, 100%, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  background: hsla(0, 0%, 100%, 0.06);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsla(0, 0%, 100%, 0.12);
   border-radius: var(--radius);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsla(194, 100%, 50%, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.glass-card:hover::before {
+  left: 100%;
 }
 
 .glass-card:hover {
-  background: hsla(0, 0%, 100%, 0.08);
-  border-color: hsla(0, 0%, 100%, 0.2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.3);
+  background: hsla(0, 0%, 100%, 0.1);
+  border-color: hsla(194, 100%, 50%, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 12px 40px hsla(0, 0%, 0%, 0.4),
+    0 0 20px hsla(194, 100%, 50%, 0.2);
 }
 
 .card-3d {
   transform-style: preserve-3d;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  perspective: 1000px;
 }
 
 .card-3d:hover {
-  transform: rotateY(5deg) rotateX(5deg) translateZ(20px);
+  transform: rotateY(8deg) rotateX(4deg) translateZ(25px);
+}
+
+/* Frosted Glass Variant */
+.glass-frosted {
+  background: hsla(0, 0%, 100%, 0.03);
+  backdrop-filter: blur(15px) saturate(1.2);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  box-shadow: 
+    inset 0 1px 0 hsla(0, 0%, 100%, 0.1),
+    0 4px 20px hsla(0, 0%, 0%, 0.2);
 }
 
 /* Particle Background */
@@ -31,6 +66,7 @@
   top: 0;
   left: 0;
   z-index: -1;
+  opacity: 0.8;
 }
 
 /* Responsive Glass Effects */
